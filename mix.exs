@@ -11,7 +11,13 @@ defmodule Rpn.MixProject do
       aliases: aliases(),
       deps: deps(),
       compilers: [:phoenix_live_view] ++ Mix.compilers(),
-      listeners: [Phoenix.CodeReloader]
+      listeners: [Phoenix.CodeReloader],
+      # Docs
+      name: "Rpn",
+      # source_url: "https://github.com/cphex/rpn",
+      # source_ref: "master",
+      # homepage_url: "https://...",
+      docs: docs()
     ]
   end
 
@@ -65,7 +71,16 @@ defmodule Rpn.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:ex_doc, "~> 0.37", only: :dev, runtime: false}
+    ]
+  end
+
+  defp docs do
+    [
+      name: "Rpn",
+      extras: [],
+      formatters: ["html"]
     ]
   end
 
