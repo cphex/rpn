@@ -42,7 +42,7 @@ config :esbuild,
     env: %{
       "NODE_PATH" =>
         System.get_env("MIX_ESBUILD_NODE_PATH") ||
-        [Path.expand("../deps", __DIR__), Mix.Project.build_path()]
+          [Path.expand("../deps", __DIR__), Mix.Project.build_path()]
     }
   ]
 

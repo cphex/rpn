@@ -10,8 +10,7 @@ defmodule Rpn.Application do
     children = [
       RpnWeb.Telemetry,
       Rpn.Repo,
-      {Ecto.Migrator,
-       repos: Application.fetch_env!(:rpn, :ecto_repos), skip: skip_migrations?()},
+      {Ecto.Migrator, repos: Application.fetch_env!(:rpn, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:rpn, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Rpn.PubSub},
       # Start a worker by calling: Rpn.Worker.start_link(arg)
